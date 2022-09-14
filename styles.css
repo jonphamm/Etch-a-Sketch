@@ -1,10 +1,22 @@
-/* .flex-container {
-    height: 100vh; /* takes up entire height of screen (viewport height/width) 
+.flex-container {
+    height: 100vh; /* takes up entire height of screen (viewport height/width) */
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: linear-gradient(rgb(96, 99, 99, 0.082), white);
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(29, 28, 28, 0.7));
+}
+
+.title {
+    color: white; 
+    font-weight: bold; 
+    font-size: 90px; 
+    margin: 20px 10px 10px 10px; 
+    font-family: sans-serif;
+    color: transparent;
+    background-image: url(https://media1.giphy.com/media/3osxYgD4kfm3mGM0Ra/200w.webp?cid=ecf05e470ct98cfl5s81exws9uv592749s443oyq95j8oe0r&rid=200w.webp&ct=g);
+    background-position: center;
+    -webkit-background-clip: text;
 }
 
 .board {
@@ -12,97 +24,118 @@
     height: 80%;
     display: grid;
     background-color: white;
-    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
-    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgb(255, 255, 255); /* more info on box-shadows https://css-tricks.com/almanac/properties/b/box-shadow/ */
 }
-*/
-.flex-container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(rgba(96, 79, 252, 0.082), white);
-  }
-  .board {
-    width: 80%;
-    height: 80%;
-    display: grid;
-    background-color: white;
-    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
-      0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-  }
-  .board:hover {
+
+.board:hover {
     cursor: pointer;
-  }
-  .content {
+}
+
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 300px;
-    min-height: 300px;
-    width: 60vw;
-    height: 60vw;
-    max-width: 600px;
-    max-height: 600px;
-  }
-  .title {
+    min-height: 350px;
+    min-width: 350px;
+    max-width: 700px;
+    max-height: 700px;
+    width: 80vw;
+    height: 80vh;
+}
+
+.title {
     display: flex;
     justify-content: center;
-  }
-  .buttons {
+}
+
+.buttons {
     margin-top: 10px;
     margin-bottom: 10px;
-  }
-  button {
+}
+
+button {
     padding: 0.3em 1.2em;
-    margin: 0 0.3em 0.3em 0;
+    margin: 19px 10px 10px 0; /* goes from top, R, bottom, L */
     border-radius: 2em;
     text-decoration: none;
     font-weight: 600;
     text-align: center;
     transition: all 0.2s;
-  }
-  button:hover {
+}
+
+button:hover {
     cursor: pointer;
-  }
-  .blackButton {
+    transform: scale(1.09);
+}
+
+.blackBtn {
     background-color: black;
     color: white;
-  }
-  .blackButton:hover {
+}
+
+.blackBtn:hover {
     background-color: white;
     color: black;
-  }
-  .grayButton {
-    background-color: rgba(128, 128, 128, 0.411);
-    color: black;
-  }
-  .grayButton:hover {
+}
+
+.grayBtn {
+    background-color: gray;
+    color: rgb(255, 255, 255);
+}
+
+.grayBtn:hover {
     background-color: rgb(95, 95, 95);
     color: white;
-  }
-  .randomButton {
+}
+
+.randomBtn {
     background: linear-gradient(0.25turn, #f65cfc, #ebf8e1, #583cf6);
-  }
-  .randomButton:hover {
+}
+
+.randomBtn:hover {
     background: linear-gradient(0.25turn, #20ff02, #ebf8e1, #aecc03);
-  }
-  .erasorButton {
+}
+
+.eraserBtn {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-  }
-  .erasorButton:hover {
+}
+.eraserBtn:hover {
     background-color: white;
-    color: rgb(255, 255, 255);
-  }
-  input {
-    width: 50px;
-  }
-  
-  .mode {
-    margin-bottom: 5px;
-  }
-  .error {
-    display: none;
-  }
+    color: rgb(248, 151, 191);
+}
+
+.resetBtn {
+    background-color: rgb(225, 179, 179);
+}
+
+.resetBtn:hover {
+    color: white;
+}
+
+.moving {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.moving .moving-bg {
+    box-sizing: content-box;
+    padding-bottom: 300px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(./images/rain.jpg);
+    background-size: cover;
+    animation: moving 30s linear infinite;
+}
+
+
+@keyframes moving {
+    from{
+        transform: translateY(0)
+    } to {
+        transform: translateY(-300px)
+    }
+}

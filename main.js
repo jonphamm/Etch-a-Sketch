@@ -56,7 +56,6 @@ function colorSquare() {
 function changeColor(choice) {
   color = choice;
 }
-
 // resets board when reset button is clicked
 function resetBoard() {
   let board = document.querySelector('.board');
@@ -65,7 +64,7 @@ function resetBoard() {
 }
   // adding style within JS
   const mode = document.querySelector('.mode');
-  mode.style.cssText = 'color: black; font-weight: bold;'
+  mode.style.cssText = 'color: rgb(190, 190, 190); font-weight: bold; font-size: 23px;'
   
   // stops drawing when user clicks mouse
   document.querySelector('body').addEventListener('click', (e) => {
@@ -78,3 +77,16 @@ function resetBoard() {
      }
     }
   });
+
+  /* randomizes background color upon reload
+  function randomBackgroundColor() {
+    const x = Math.floor(Math.random() * 256);
+    const y = Math.floor(Math.random() * 256);
+    const z = Math.floor(Math.random() * 256);
+    const bgColor = "rgb(" + x + "," + y + "," + z + ")";
+ 
+    document.body.style.background = bgColor;
+  }
+
+randomBackgroundColor();
+*/
