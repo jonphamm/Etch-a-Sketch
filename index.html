@@ -10,29 +10,33 @@
 </head>
 <body>
     <div class="flex-container">
-        <div class="title" style="font-weight: bold; font-size: larger;">Sketch Pad</div>
+        <div class="title">Sketch Pad</div>
         <div class="mode">Mode: Coloring</div>
-        <div class="instructions" style="font-size: small;">Click to stop/continue coloring!</div>
+        <div class="instructions" style="color: rgb(140, 139, 139); font-size: 15px; margin: 10px 0 20px 0;">Click to STOP/RESUME coloring!</div>
         <div class="content">
             <div class="board"></div>
             <!--the 'onclick' changes color of the squares according to user choice-->
             <div class="button">
-                <button onclick="changeColor('black')">Black</button>
-                <button onclick="changeColor('white')">Eraser</button>
-                <button onclick="changeColor('gray')">Gray</button>
-                <button onclick="changeColor('random')">Random</button>
-                <button onclick="resetBoard()">Reset</button>
+                <button class="blackBtn" onclick="changeColor('black')">Black</button>
+                <button class="grayBtn" onclick="changeColor('gray')">Gray</button>
+                <button class="randomBtn" onclick="changeColor('random')">Random</button>
+                <button class="eraserBtn" onclick="changeColor('white')">Eraser</button>
+                <button class="resetBtn" onclick="resetBoard()">Reset</button>
             </div>
             <!--the 'onchange' changes size of squares according to user value input-->
             <input 
                 type="text" 
-                placeholder="Size of Board" 
-                value="16"
+                placeholder="Size of Squares" 
+                value="30"
+                style="margin-top: 10px;"
                 onchange="changeSize(this.value)">
             <button>Set Size</button>
         </div>
-        <div class="error">
+        <div class="error" style="color: rgb(255, 255, 255); margin-bottom: 20px;">
             Input must be between 2 and 100.
+        </div>
+        <div class="moving">
+            <div class="moving-bg"></div>
         </div>
     </div>
     <script src="main.js"></script>
