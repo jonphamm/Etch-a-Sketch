@@ -28,7 +28,7 @@ function populateBoard(size) {
     }
 }
 
-populateBoard(16);
+populateBoard(30);
 
 // will display square size according to user input
 function changeSize(input) {
