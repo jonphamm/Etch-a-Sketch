@@ -10,8 +10,8 @@ function populateBoard(size) {
     // grabs all div squares on board and removes them
     let squares = board.querySelectorAll('div');
     squares.forEach((div) => div.remove());
-    // this creates 16 columns/rows that will repeat that will repeat
-    // each column/row will have a width of 1/16 the width of the container
+    // this creates certain # of columns/rows that will repeat that will repeat
+    // each column/row will have a width of 1/# the width of the container
     // repeat(number, width);
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
