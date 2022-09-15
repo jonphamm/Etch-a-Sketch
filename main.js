@@ -3,6 +3,7 @@ let color = 'black';
 // stops drawing once user clicks
 let click = true;
 
+// create function to populate board with user's sketch
 function populateBoard(size) {
     let board = document.querySelector('.board');
     // clear out any existing squares on the board
@@ -16,7 +17,7 @@ function populateBoard(size) {
     board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
     let amount = size * size;
-    // creating 256 (16x16) grid square divs 
+    // creating 256 (16x16) grid square divs, but adjusts to user input for size
     for(let i = 0; i < amount; i++) {
         let square = document.createElement('div');
         // changes square to desired color after mousing over
@@ -28,9 +29,10 @@ function populateBoard(size) {
     }
 }
 
+// will automatically load size input of 30
 populateBoard(30);
 
-// will display square size according to user input
+// will change square size according to user input
 function changeSize(input) {
     // will populateBoard if input is between 2 and 100
     if(input >= 2 && input <= 100) {
@@ -53,16 +55,18 @@ function colorSquare() {
   }
 }
 
+// changes color of squares to user choice of button
 function changeColor(choice) {
   color = choice;
 }
+
 // resets board when reset button is clicked
 function resetBoard() {
   let board = document.querySelector('.board');
   let squares = board.querySelectorAll('div');
   squares.forEach((div) => div.style.backgroundColor = 'white');
 }
-  // adding style within JS
+  // adding style within JS to '.mode' class
   const mode = document.querySelector('.mode');
   mode.style.cssText = 'color: rgb(190, 190, 190); font-weight: bold; font-size: 23px;'
   
