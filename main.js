@@ -7,7 +7,7 @@ let click = true;
 function populateBoard(size) {
     let board = document.querySelector('.board');
     // clear out any existing squares on the board
-    // grabs all div squares on board and removes them
+    // grabs all div squares from BOARD and removes them
     let squares = board.querySelectorAll('div');
     squares.forEach((div) => div.remove());
     // this creates certain # of columns/rows that will repeat that will repeat

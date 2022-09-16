@@ -121,21 +121,22 @@ button:hover {
 }
 
 .moving .moving-bg {
-    
     padding-bottom: 300px;
     position: absolute;
     height: 100%;
     width: 100%;
     background-image: url(./images/rain.jpg);
     background-size: cover;
-    animation: moving 15s linear infinite;
+    animation: MoveUpDown 15s linear infinite;
 }
 
 /* allows for movement of background img */
-@keyframes moving {
-    from{
-        transform: translateY(0)
-    } to {
-        transform: translateY(-300px)
+@keyframes MoveUpDown {
+    0%, 100% {
+      transform: translateY(0);
     }
-}
+    50% {
+      transform: translateY(-150px);
+    }
+  }
+  
